@@ -1,11 +1,11 @@
 import GlobalStyles from "./styles/GlobalStyles";
-import { Dashboard } from "./pages/Dashboard";
+import { Layout } from "./components/Layout";
 
 const App = () => {
   return (
     <>
       <GlobalStyles />
-      <Dashboard />
+      <Layout />
     </>
   );
 }
