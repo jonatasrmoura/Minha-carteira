@@ -1,10 +1,13 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 
 import {
   ContentHeader,
   SelectInput,
   HistoryFinanceCard
 } from '../../components';
+
+import gains from '../../repositories/gains';
+import expenses from '../../repositories/expenses';
 
 import {
   Container,
@@ -20,7 +23,18 @@ interface IRouteParams {
   }
 }
 
+interface IData {
+  id: string;
+  description: string;
+  amountFormatted: string;
+  frequency: string;
+  dataFormatted: string;
+  tagColor: string;
+}
+
 const List = ({ match }: IRouteParams) => {
+  const [data, setData] = useState<IData[]>([]);
+
   const { type } = match.params;
 
   const titleHeader = useMemo(() => {
@@ -36,6 +50,10 @@ const List = ({ match }: IRouteParams) => {
     };
   }, [type]);
 
+  const listData = useMemo(() => {
+    return type === 'entry-balance' ? gains : expenses;
+  }, [type]);
+
   const months = [
     {value: 9, label: 'Setembro'},
     {value: 8, label: 'Agosto'},
@@ -47,6 +65,21 @@ const List = ({ match }: IRouteParams) => {
     {value: 2020, label: 2020},
     {value: 2019, label: 2019},
   ];
+
+  useEffect(() => {
+    const response = listData.map(item => {
+      return {
+        id: String(Math.random() * data.length),
+        description: item.description,
+        amountFormatted: item.amount,
+        frequency: item.frequency,
+        dataFormatted: item.date,
+        tagColor: item.frequency === 'recorrente' ? '#4E41F0' : '#E44C4E',
+      }
+    });
+
+    setData(response);
+  }, []);
 
   return (
     <Container>
@@ -75,12 +108,17 @@ const List = ({ match }: IRouteParams) => {
       </Filters>
 
       <Content>
-        <HistoryFinanceCard
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="17/07/2021"
-          amount="R$ 125,50"
-        />
+        {
+          data.map(item => (
+            <HistoryFinanceCard
+              key={item.id}
+              tagColor={item.tagColor}
+              title={item.description}
+              subtitle={item.dataFormatted}
+              amount={item.amountFormatted}
+            />
+          ))
+        }
       </Content>
     </Container>
   );
