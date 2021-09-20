@@ -5,3 +5,4 @@ export { Layout } from './Layout';
 export { MainHeader } from './MainHeader';
 export { SelectInput } from './SelectInput';
 export { Toggle } from './Toggle';
+export { HistoryFinanceCard } from './HistoryFinanceCard';
