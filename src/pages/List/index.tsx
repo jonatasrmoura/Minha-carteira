@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import {
   ContentHeader,
   SelectInput,
@@ -10,7 +12,30 @@ import {
   Filters,
 } from './styles';
 
-const List = () => {
+interface IRouteParams {
+  match: {
+    params: {
+      type: string;
+    }
+  }
+}
+
+const List = ({ match }: IRouteParams) => {
+  const { type } = match.params;
+
+  const titleHeader = useMemo(() => {
+    return type === 'entry-balance' ? 
+    {
+      title: 'Entradas',
+      lineColor: '#4E41F0',
+    } 
+    : 
+    {
+      title: 'Saídas',
+      lineColor: '#E44C4E',
+    };
+  }, [type]);
+
   const months = [
     {value: 9, label: 'Setembro'},
     {value: 8, label: 'Agosto'},
@@ -26,8 +51,8 @@ const List = () => {
   return (
     <Container>
       <ContentHeader
-        title="Saídas"
-        lineColor="#E44C4E"
+        title={titleHeader.title}
+        lineColor={titleHeader.lineColor}
       >
         <SelectInput option={months}/>
         <SelectInput option={years}/>
