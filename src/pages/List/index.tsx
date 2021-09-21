@@ -7,8 +7,8 @@ import {
   HistoryFinanceCard
 } from '../../components';
 
-import gains from '../../repositories/gains';
-import expenses from '../../repositories/expenses';
+import { gains } from '../../repositories/gains';
+import { expenses } from '../../repositories/expenses';
 import { formatCurrency } from '../../utils/formatCurrency';
 import { formatDate } from '../../utils/formatDate';
 import { listOfMonths } from '../../utils/listOfMonths';
