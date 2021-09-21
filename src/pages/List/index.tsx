@@ -11,6 +11,7 @@ import gains from '../../repositories/gains';
 import expenses from '../../repositories/expenses';
 import { formatCurrency } from '../../utils/formatCurrency';
 import { formatDate } from '../../utils/formatDate';
+import { listOfMonths } from '../../utils/listOfMonths';
 
 import {
   Container,
@@ -59,17 +60,35 @@ const List = ({ match }: IRouteParams) => {
     return type === 'entry-balance' ? gains : expenses;
   }, [type]);
 
-  const months = [
-    {value: 1, label: 'Janeiro'},
-    {value: 5, label: 'Maio'},
-    {value: 7, label: 'Julho'},
-  ];
+  const years = useMemo(() => {
+    let uniqueYears: number[] = [];
 
-  const years = [
-    {value: 2019, label: 2019},
-    {value: 2020, label: 2020},
-    {value: 2021, label: 2021},
-  ];
+    listData.forEach(item => {
+      const date = new Date(item.date);
+      const year = date.getFullYear();
+
+      // Verificar se o valor não está no meu select
+      if (!uniqueYears.includes(year)) {
+        uniqueYears.push(year);
+      }
+    });
+
+    return uniqueYears.map(year => {
+      return {
+        value: year,
+        label: year,
+      }
+    });
+  }, [listData]);
+
+  const months = useMemo(() => {
+    return listOfMonths.map((month, index) => {
+      return {
+        value: index + 1,
+        label: month,
+      }
+    });
+  }, []);
 
   useEffect(() => {
     const filteredDate = listData.filter(item => {
