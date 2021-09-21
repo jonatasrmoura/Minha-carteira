@@ -8,6 +8,8 @@ import {
 
 import gains from '../../repositories/gains';
 import expenses from '../../repositories/expenses';
+import { formatCurrency } from '../../utils/formatCurrency';
+import { formatDate } from '../../utils/formatDate';
 
 import {
   Container,
@@ -71,9 +73,9 @@ const List = ({ match }: IRouteParams) => {
       return {
         id: String(Math.random() * data.length),
         description: item.description,
-        amountFormatted: item.amount,
+        amountFormatted: formatCurrency(Number(item.amount)),
         frequency: item.frequency,
-        dataFormatted: item.date,
+        dataFormatted: formatDate(item.date),
         tagColor: item.frequency === 'recorrente' ? '#4E41F0' : '#E44C4E',
       }
     });
