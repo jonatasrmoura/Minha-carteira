@@ -20,7 +20,10 @@ const Dashboard = () => {
         title="Dashboard"
         lineColor="#F7931B"
       >
-        <SelectInput option={options}/>
+        <SelectInput
+          option={options}
+          onChange={() => {}}
+        />
       </ContentHeader>
     </Container>
   );
