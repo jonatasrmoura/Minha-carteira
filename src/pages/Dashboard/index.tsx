@@ -1,11 +1,14 @@
 import { useMemo, useState } from 'react';
 
-import { WalletBox } from '../../components';
+import { WalletBox, MessageBox } from '../../components';
 
 import { gains } from '../../repositories/gains';
 import { expenses } from '../../repositories/expenses';
 
 import { listOfMonths } from '../../utils/listOfMonths';
+
+// import happyImg from '../../assets/happy.svg';
+import SadImg from '../../assets/sad.svg';
 
 import {
   ContentHeader,
@@ -21,11 +24,11 @@ const Dashboard = () => {
   const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
   const [yearSelected, setYearSelected] = useState<number>(new Date().getFullYear());
   
-  const options = [
-    {value: 'Jonatas', label: 'Jonatas'},
-    {value: 'Rodrigo', label: 'Rodrigo'},
-    {value: 'Maria', label: 'Maria'},
-  ];
+  // const options = [
+  //   {value: 'Jonatas', label: 'Jonatas'},
+  //   {value: 'Rodrigo', label: 'Rodrigo'},
+  //   {value: 'Maria', label: 'Maria'},
+  // ];
 
   const years = useMemo(() => {
     let uniqueYears: number[] = [];
@@ -116,6 +119,13 @@ const Dashboard = () => {
           amount={4850.00}
           footerLabel="Atualizado com base nas entradas e saídas."
           icon="arrowUpImg"
+        />
+
+        <MessageBox
+          title="Muito bem!"
+          icon={SadImg}
+          description="Sua carteira está positiva!"
+          footerText="Continue assim. Considere investir o seu saldo."
         />
       </Content>
     </Container>

@@ -7,3 +7,4 @@ export { SelectInput } from './SelectInput';
 export { Toggle } from './Toggle';
 export { HistoryFinanceCard } from './HistoryFinanceCard';
 export { WalletBox } from './WalletBox';
+export { MessageBox } from './MessageBox';
