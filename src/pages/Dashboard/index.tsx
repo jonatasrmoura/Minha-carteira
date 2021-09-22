@@ -1,6 +1,10 @@
 import { useMemo, useState } from 'react';
 
-import { WalletBox, MessageBox } from '../../components';
+import {
+  WalletBox,
+  MessageBox,
+  PieChar,
+} from '../../components';
 
 import { gains } from '../../repositories/gains';
 import { expenses } from '../../repositories/expenses';
@@ -191,6 +195,8 @@ const Dashboard = () => {
           description={message.description}
           footerText={message.footerText}
         />
+
+        <PieChar />
       </Content>
     </Container>
   );
