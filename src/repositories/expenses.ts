@@ -50,5 +50,33 @@ export const expenses = [
   {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-08-19"},
   {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-08-19"},
   {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-08-19"},
+
+  {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-01-19"},
+  {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2021-01-23"},
+  {"description":"Compras do mês",        "amount":"559.15","type":"saída","frequency":"recorrente","date":"2021-01-25"},
+  {"description":"Parcela do Celular 5/5","amount":"150.99","type":"saída","frequency":"eventual",  "date":"2021-02-26"},
+  {"description":"Perfume",               "amount":"250.00","type":"saída","frequency":"eventual",  "date":"2021-03-21"},
+  {"description":"Energia elétrica",      "amount":"250.00","type":"saída","frequency":"recorrente","date":"2021-04-10"},
+  {"description":"Água",                  "amount":"90.00", "type":"saída","frequency":"recorrente","date":"2021-04-15"},
+  {"description":"Telefone",              "amount":"99.99", "type":"saída","frequency":"recorrente","date":"2021-05-23"},
+  {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2021-06-23"},
+  {"description":"Compras do mês",        "amount":"700.00","type":"saída","frequency":"recorrente","date":"2021-07-25"},
+  {"description":"Cafeteira",             "amount":"250.00","type":"saída","frequency":"eventual",  "date":"2021-08-26"},
+  {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-09-19"},
+  {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-10-19"},
+  {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-11-19"},
+
+  {"description":"Compras do mês",        "amount":"559.15","type":"saída","frequency":"recorrente","date":"2021-01-25"},
+  {"description":"Parcela do Celular 5/5","amount":"150.99","type":"saída","frequency":"eventual",  "date":"2021-02-26"},
+  {"description":"Perfume",               "amount":"250.00","type":"saída","frequency":"eventual",  "date":"2021-03-21"},
+  {"description":"Energia elétrica",      "amount":"250.00","type":"saída","frequency":"recorrente","date":"2021-04-10"},
+  {"description":"Água",                  "amount":"90.00", "type":"saída","frequency":"recorrente","date":"2021-04-15"},
+  {"description":"Telefone",              "amount":"99.99", "type":"saída","frequency":"recorrente","date":"2021-05-23"},
+  {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2021-06-23"},
+  {"description":"Compras do mês",        "amount":"700.00","type":"saída","frequency":"recorrente","date":"2021-07-25"},
+  {"description":"Cafeteira",             "amount":"250.00","type":"saída","frequency":"eventual",  "date":"2021-12-26"},
+  {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-12-19"},
+  {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-12-19"},
+
   {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2021-08-19"}
 ];

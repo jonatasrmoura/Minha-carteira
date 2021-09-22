@@ -92,7 +92,7 @@ const List = ({ match }: IRouteParams) => {
     try {
       const parseMonth = Number(month);
       setMonthSelected(parseMonth);
-    } catch(err) { 
+    } catch { 
       throw new Error('invalid month value. Is accept 0 - 24.');
     }
   }
@@ -101,7 +101,7 @@ const List = ({ match }: IRouteParams) => {
     try {
       const parseYear = Number(year);
       setYearSelected(parseYear);
-    } catch(err) { 
+    } catch { 
       throw new Error('invalid year value. Is accept integer numbers');
     }
   }
