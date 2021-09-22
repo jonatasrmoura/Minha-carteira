@@ -9,7 +9,7 @@ import { listOfMonths } from '../../utils/listOfMonths';
 
 import happyImg from '../../assets/happy.svg';
 import sadImg from '../../assets/sad.svg';
-import thinkingImg from '../../assets/thinking.svg';
+import smilingImg from '../../assets/smiling.png';
 
 import {
   ContentHeader,
@@ -112,7 +112,7 @@ const Dashboard = () => {
         title: "Ufaaa!",
         description:"Neste mês, você gastou exatamente o que ganhou.",
         footerText:"Tome cuidado, No próximo mês tente poupar o seu dinheiro.",
-        icon: thinkingImg,
+        icon: smilingImg,
       }
     } else {
       return {
