@@ -25,7 +25,7 @@ export const expenses = [
   {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2019-05-23"},
   {"description":"Compras do mês",        "amount":"540.00","type":"saída","frequency":"recorrente","date":"2019-05-25"},
   {"description":"Parcela do Celular 4/5","amount":"150.99","type":"saída","frequency":"eventual",  "date":"2019-05-26"},
-  {"description":"Blusa Iron Man",        "amount":"150.00","type":"saída","frequency":"eventual",  "date":"2019-01-23"},
+  {"description":"Blusa Iron Man",        "amount":"2400.00","type":"saída","frequency":"eventual",  "date":"2019-01-10"},
   {"description":"Energia elétrica",      "amount":"200.00","type":"saída","frequency":"recorrente","date":"2019-06-10"},
   {"description":"Água",                  "amount":"150.00","type":"saída","frequency":"recorrente","date":"2019-06-15"},
   {"description":"Telefone",              "amount":"99.99", "type":"saída","frequency":"recorrente","date":"2019-06-23"},
