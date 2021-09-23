@@ -9,3 +9,4 @@ export { HistoryFinanceCard } from './HistoryFinanceCard';
 export { WalletBox } from './WalletBox';
 export { MessageBox } from './MessageBox';
 export { PieChartBox } from './PieChart';
+export { HistoryBox } from './HistoryBox';
