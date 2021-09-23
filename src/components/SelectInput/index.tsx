@@ -9,23 +9,21 @@ interface ISelectInputProps {
   defaultValue?: string | number;
 };
 
-const SelectInput = ({ option, onChange, defaultValue }: ISelectInputProps) => {
-  return (
-    <Container>
-      <select onChange={onChange} defaultValue={defaultValue}>
-        {
-          option.map(option => (
-            <option
-              key={option.value}
-              value={option.value}
-            >
-              {option.label}
-            </option>
-          ))
-        }
-      </select>
-    </Container>
-  );
-};
+const SelectInput = ({ option, onChange, defaultValue }: ISelectInputProps) => (
+  <Container>
+    <select onChange={onChange} defaultValue={defaultValue}>
+      {
+        option.map(option => (
+          <option
+            key={option.value}
+            value={option.value}
+          >
+            {option.label}
+          </option>
+        ))
+      }
+    </select>
+  </Container>
+);
 
 export { SelectInput };
