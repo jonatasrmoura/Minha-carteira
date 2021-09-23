@@ -67,6 +67,7 @@ const HistoryBox = ({
             strokeWidth={5}
             dot={{ r: 5 }}
             activeDot={{ r: 8 }}
+            cursor="pointer"
           />
 
           <Line
@@ -77,6 +78,7 @@ const HistoryBox = ({
             strokeWidth={5}
             dot={{ r: 5 }}
             activeDot={{ r: 8 }}
+            cursor="pointer"
           />
         </LineChart>
       </ResponsiveContainer>
