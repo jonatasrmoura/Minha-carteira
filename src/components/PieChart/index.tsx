@@ -1,52 +1,57 @@
-// import React, { PureComponent } from 'react';
-// import {
-//   PieChart,
-//   Pie,
-//   Sector,
-//   Cell,
-//   ResponsiveContainer,
-// } from 'recharts';
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+} from 'recharts';
 
 import {
   Container,
   SideLeft,
   LegendContainer,
   Legend,
-  // SideRight,
+  SideRight,
 } from "./styles";
 
-const PieChar = () => (
+interface IPieCharProps {
+  data: {
+    name: string;
+    value: number;
+    percent: number;
+    color: string;
+  }[];
+};
+
+const PieChartBox = ({ data }: IPieCharProps) => (
   <Container>
     <SideLeft>
       <h2>Relação</h2>
       <LegendContainer>
-        <Legend color="#F7931B">
-          <div>95%</div>
-          <span>Entradas</span>
-        </Legend>
-
-        <Legend color="#E44C4E">
-          <div>5%</div>
-          <span>Saídas</span>
-        </Legend>
-
-        <Legend color="#F7931B">
-          <div>5%</div>
-          <span>Saídas</span>
-        </Legend>
-
-        <Legend color="#E44C4E">
-          <div>5%</div>
-          <span>Saídas</span>
-        </Legend>
-
-        <Legend color="#F7931B">
-          <div>5%</div>
-          <span>Saídas</span>
-        </Legend>
+        {
+          data.map((indicator) => (
+            <Legend key={indicator.name} color={indicator.color}>
+              <div>{indicator.percent}</div>
+              <span>{indicator.name}</span>
+            </Legend>
+          ))
+        }
       </LegendContainer>
     </SideLeft>
+
+    <SideRight>
+        <ResponsiveContainer>
+          <PieChart>
+            <Pie data={data} dataKey="percent">
+              {
+                data.map((indicator) => (
+                  <Cell key={indicator.name} fill={indicator.color} />
+                ))
+              }
+            </Pie>
+          </PieChart>
+        </ResponsiveContainer>
+    </SideRight>
   </Container>
 );
 
-export { PieChar };
+export { PieChartBox };
