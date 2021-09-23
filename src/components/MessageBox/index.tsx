@@ -7,23 +7,21 @@ interface IMessageBoxProps {
   icon: string;
 }
 
-const MessageBox = (props: IMessageBoxProps) => {
-  return (
-    <Container>
-      <header>
-        <h1>
-          {props.title}
-          <img src={props.icon} alt={props.title} />
-        </h1>
+const MessageBox = (props: IMessageBoxProps) => (
+  <Container>
+    <header>
+      <h1>
+        {props.title}
+        <img src={props.icon} alt={props.title} />
+      </h1>
 
-        <p> {props.description}</p>
-      </header>
+      <p> {props.description}</p>
+    </header>
 
-      <footer>
-        <span>{props.footerText}</span>
-      </footer>
-    </Container>
-  );
-};
+    <footer>
+      <span>{props.footerText}</span>
+    </footer>
+  </Container>
+);
 
 export { MessageBox };
