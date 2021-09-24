@@ -1,5 +1,6 @@
 import {
   Input,
+  Button,
 } from '../../components';
 
 import logoImg from '../../assets/logo.svg';
@@ -33,7 +34,7 @@ const SignIn = () => {
           required
         />
 
-        <button type="submit">Acessar</button>
+        <Button type="submit">Acessar</Button>
       </Form>
     </Container>
   );
