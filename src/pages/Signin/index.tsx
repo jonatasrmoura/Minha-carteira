@@ -1,3 +1,7 @@
+import {
+  Input,
+} from '../../components';
+
 import logoImg from '../../assets/logo.svg';
 
 import {
@@ -15,11 +19,19 @@ const SignIn = () => {
         <h2>Minha Carteira</h2>
       </Logo>
 
-      <Form>
+      <Form onSubmit={() => {}}>
         <FormTitle>Entrar</FormTitle>
 
-        <input type="text"></input>
-        <input type="text"></input>
+        <Input
+          type="email"
+          placeholder="E-mail"
+          required
+        />
+        <Input
+          type="password"
+          placeholder="Senha"
+          required
+        />
 
         <button type="submit">Acessar</button>
       </Form>

@@ -11,3 +11,4 @@ export { MessageBox } from './MessageBox';
 export { PieChartBox } from './PieChart';
 export { HistoryBox } from './HistoryBox';
 export { BarChartBox } from './BarChartBox';
+export { Input } from './Input';
