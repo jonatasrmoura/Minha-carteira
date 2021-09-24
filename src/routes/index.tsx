@@ -17,7 +17,6 @@ const Routes: React.FC = () => {
       :
       <AuthRoutes />
     }
-      <AuthRoutes />
     </BrowserRouter>
   );
 };
