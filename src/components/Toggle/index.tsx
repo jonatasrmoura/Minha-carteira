@@ -4,16 +4,28 @@ import {
   ToggleSelector,
 } from './styles';
 
-const Toggle = () => (
+interface IToggleProps {
+  labelLeft: string;
+  labelRight: string;
+  checked: boolean;
+  onChance(): void; 
+};
+
+const Toggle = ({
+  labelLeft,
+  labelRight,
+  checked,
+  onChance,
+}: IToggleProps) => (
   <Container>
-    <ToggleLabel>Light</ToggleLabel>
+    <ToggleLabel>{labelLeft}</ToggleLabel>
     <ToggleSelector
-      onChange={() => {}}
-      checked={true}
+      checked={checked}
       uncheckedIcon={false}
       checkedIcon={false}
+      onChange={onChance}
     />
-    <ToggleLabel>Dark</ToggleLabel>
+    <ToggleLabel>{labelRight}</ToggleLabel>
   </Container>
 );
 
