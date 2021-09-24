@@ -35,10 +35,10 @@ const WalletBox = (props: IWalletBoxProps) => {
     <Container color={props.color}>
       <span>{props.title}</span>
       <h1>
+        <strong>R$ </strong>
         <CountUp
           start={0}
           end={props.amount}
-          prefix={"R$ "}
           separator="."
           decimal=","
           decimals={2}
