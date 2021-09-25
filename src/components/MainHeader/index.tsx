@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 
-import { Toggle } from '../Toggle';
 import { emojis } from '../../utils/emojis';
 
 import { useTheme } from '../../hooks/theme';
@@ -9,7 +8,8 @@ import {
   Container,
   Profile,
   Welcome,
-  UserName
+  UserName,
+  Toggle,
 } from './styles';
 
 
