@@ -2,7 +2,9 @@ import {
   MdDashboard,
   MdArrowDownward,
   MdArrowUpward,
-  MdExitToApp
+  MdExitToApp,
+  MdClose,
+  MdMenu,
 } from 'react-icons/md';
 
 import { useAuth } from '../../hooks/auth';
@@ -17,14 +19,30 @@ import {
   MenuContainer,
   MenuItemLink,
   MenuItemButton,
+  ToggleMenu,
 } from './styles';
+import { useState } from 'react';
 
 const Aside = () => {
+  const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
+
   const { signOut } = useAuth();
 
+  const handleToggleMenu = () => {
+    setToggleMenuIsOpened(!toggleMenuIsOpened);
+  }
+
   return (
-    <Container menuIsOpen={true}>
+    <Container menuIsOpen={toggleMenuIsOpened}>
       <Header>
+        <ToggleMenu onClick={handleToggleMenu}>
+          {
+            toggleMenuIsOpened
+            ? <MdClose />
+            : <MdMenu />
+          }
+        </ToggleMenu>
+
         <LogoImg src={logoImg} alt="Logo Minha Carteira" />
         <Title>Minha Carteira</Title>
       </Header>
