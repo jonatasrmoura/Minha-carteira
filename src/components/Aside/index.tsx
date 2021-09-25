@@ -7,7 +7,10 @@ import {
   MdMenu,
 } from 'react-icons/md';
 
+import { Toggle } from '../Toggle';
+
 import { useAuth } from '../../hooks/auth';
+import { useTheme } from '../../hooks/theme';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -20,16 +23,24 @@ import {
   MenuItemLink,
   MenuItemButton,
   ToggleMenu,
+  ThemeToggleFooter,
 } from './styles';
 import { useState } from 'react';
 
 const Aside = () => {
-  const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
-
   const { signOut } = useAuth();
+  const { toggleTheme, theme } = useTheme();
+
+  const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false);
 
   const handleToggleMenu = () => {
     setToggleMenuIsOpened(!toggleMenuIsOpened);
+  }
+
+  const handleChangeTheme = () => {
+    setDarkTheme(!darkTheme);
+    toggleTheme();
   }
 
   return (
@@ -68,6 +79,15 @@ const Aside = () => {
           Sair
         </MenuItemButton>
       </MenuContainer>
+
+      <ThemeToggleFooter menuIsOpen={toggleMenuIsOpened}>
+        <Toggle
+          checked={darkTheme}
+          labelLeft="Light"
+          labelRight="Dark"
+          onChance={handleChangeTheme}
+        />
+      </ThemeToggleFooter>
     </Container>
   );
 }
